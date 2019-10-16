@@ -18,8 +18,11 @@
   </PropertyGroup> 
 
   <ItemGroup>
-    <Compile Include="..\integration-test\Middleware\robotsText.cs" />
-    <Compile Include="..\integration-test\Middleware\requestLogger.cs" />
+    <Compile Include="..\shared\Middleware\robotsText.cs" />
+    <Compile Include="..\shared\Middleware\requestLogger.cs" />
+    <Compile Include="..\shared\Model\Actor.cs" />
+    <Compile Include="..\shared\Model\Healthz.cs" />
+    <Compile Include="..\shared\Model\Movie.cs" />
   </ItemGroup>
 
   <ItemGroup>

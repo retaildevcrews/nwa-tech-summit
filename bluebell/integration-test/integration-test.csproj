@@ -11,6 +11,15 @@
    </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="..\shared\Middleware\indexHandler.cs" />
+    <Compile Include="..\shared\Middleware\robotsText.cs" />
+    <Compile Include="..\shared\Middleware\requestLogger.cs" />
+    <Compile Include="..\shared\Model\Actor.cs" />
+    <Compile Include="..\shared\Model\Healthz.cs" />
+    <Compile Include="..\shared\Model\Movie.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
      <None Update="dotnet.json">
        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
      </None>
