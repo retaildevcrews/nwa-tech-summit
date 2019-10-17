@@ -3,7 +3,7 @@
 Containers are great, but how do we use them for deployment?
 
 ## Challenge
-  - Building and Pushing Images
+### Building and Pushing Images
   - Now that you are sure the application works, the team must ensure that all of the components are built as Docker images and pushed to the team's Azure Container Registry (ACR).
 
 ## Success Criteria

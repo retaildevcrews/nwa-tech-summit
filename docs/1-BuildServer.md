@@ -1,12 +1,11 @@
 # 1 - Build server / working environment
 
-There are many ways to run Azure, Docker and Kubernetes CLIs.  For this lab, we are going to use Azure Shell to create an Ubuntu "build server".  We will then SSH into the build server and run the lab from the build server.  This avoids the issues you run into when trying install everything locally and ensures that everyone is starting from a known status (DevOps). 
+There are many ways to run Azure, Docker and Kubernetes CLIs.  For this challenge, we are going to use Azure Shell to create an Ubuntu "build server".  We will then SSH into the build server and run the remaining challenges from the build server.  This avoids the issues you run into when trying install everything locally and ensures that everyone is starting from a known status (DevOps). 
 
 ## Challenge
   - Set up your team's working environment and build server
   - Ensure everyone on your team has access to your Azure subscription
   - Fork this repo to your build server
-
 
 ## Success Criteria
   - Your team must be able to SSH into the Ubuntu build server

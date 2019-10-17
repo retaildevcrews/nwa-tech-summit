@@ -1,4 +1,4 @@
-# 7 - Deploy highly available
+# 7 - Deploy Highly Available
 
 TODO
 

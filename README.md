@@ -1,63 +1,51 @@
 # Agenda
 
-## Presentation: Azure Overview
+## Presentation: Azure Overview [TODO: Add link to slides?]
 
-## Challenge: Build server / working environment
+## Challenge 1: [Build server / working environment](./docs/1-BuildServer.md)
 
-- Create Azure AD accounts for team members
-- Assign build master
-- Create Ubuntu build server
-- SSH into server and run setup.sh gist
-- az login
-- Fork this repo to the build server
+There are many ways to run Azure, Docker and Kubernetes CLIs.  For this challenge, we are going to use Azure Shell to create an Ubuntu "build server".  We will then SSH into the build server and run the remaining challenges from the build server.  This avoids the issues you run into when trying install everything locally and ensures that everyone is starting from a known status (DevOps).
 
-## Presentation: Intro to CosmosDB
+## Presentation: Intro to CosmosDB [TODO: Add link to slides?]
 
-## Challenge: Load IMDB Data
+## Challenge 2: [Load IMDB Data](./docs/2-IMDb.md)
 
-- Create CosmosDB server
-- Create collection
-- Run import script
-  - Take a look at [import-imdb](imdb) import code; Do you understand it?
-- Query the database
-  - Check out CosmosDB notebooks
+Before building your app, you first need to create the database to support it.  The app provides a service designed to be queried for information about movies, actors, and their associated genres.  Because we want a highly responsive and available app, we chose Cosmos DB as our database service.  The data used for this challenge comes from [IMDb](https://www.imdb.com/interfaces/).
 
-## Challenge: Security Is Key
+The objective of this challenge is to get you started with your own instance of Cosmos DB populated with the IMDb data and to familiarize yourself with queries in Cosmos DB.
 
-- Manage secrets with Azure Key Vault
-- Create Key Vault
-- Add secrets to Key Vault
+## Challenge 3: [Security Is Key](./docs/3-SecurityIsKey.md)
 
-## Presentation: Intro to Containers and AKS
+When working with applications in the cloud, you need to securely store and access keys, passwords, certificates, and other app secrets.  In this challenge, we will be setting up Azure Key Vault to store secrets about the Cosmos DB server created in the previous challenge.
 
-## Challenge: But First, Containers
+## Presentation: Intro to Containers and AKS [TODO: Add link to slides?]
 
-- Build, run and test [bluebell](bluebell)
-  - Run unit tests
-  - Curl /healthz
-  - Run integration test
+## Challenge 4: [But First, Containers](./docs/4-ButFirstContainers.md)
 
-## Challenge: Setup ACR
+Containers have been adopted as a great way to alleviate portability issues. They form the core of this workshop and underpin everything you'll be exploring as you progress through the challenges.
 
-- Push bluebell image to registry
+The objective of this challenge is to ensure you understand the very basics of containers, can work with them on a build server (or locally).
 
-## Challenge: Ready For Orchestration
+## Challenge 5: [Setup ACR](./docs/5-SetupACR.md)
 
-- Use Azure Kubernetes Service to configure and create a Kubernetes cluster
-  - Confirm Kubectl get nodes
-- Integrate identity with AKS (AAD-pod-identity)
-- Deploy bluebell container to the Kubernetes cluster using appropriate namespaces
-  - Configure yaml w/ env vars
-  - Open bluebell URL from browser
+Containers are great, but how do we use them for deployment?
 
-## Challenge: Deploy highly available
+The objective of this challenge is to ensure you know how to build a Docker image and push it to Azure Container Registry (ACR).
+
+## Challenge 6: [Ready For Orchestration](./docs/6-ReadyForOrchestration.md)
+
+Containers are extremely useful on their own, but their flexibility and potential is multiplied when deployed to an orchestrator.
+
+The objective of this challenge is to deploy your application to a Azure Kubernetes Service (AKS) cluster in your Azure subscription.
+
+## Challenge 7: [Deploy Highly Available](./docs/7-DeployHighlyAvailable.md)
 
 - Deploy multi-replica instance of the app
 - Commit rolling update to version 2 of the app
 - Verify that all pods are now running v2
 - Rollback
 
-## Challenge: Wait, What's Happening
+## Challenge 8: [Wait, What's Happening](./docs/8-WaitWhatsHappening.md)
 
 - Use Azure Monitor to monitor the health of the AKS cluster
 - Create alerts to detect issues
