@@ -47,8 +47,7 @@ The objective of this challenge is to deploy your application to a Azure Kuberne
 
 ## Challenge 8: [Wait, What's Happening](./docs/8-WaitWhatsHappening.md)
 
-- Use Azure Monitor to monitor the health of the AKS cluster
-- Create alerts to detect issues
+Deploying your applications to a cluster is just the first step for running containers in production, and it's important to think about operations and scenarios around your deployments. It is valuable to have a holistic understanding of your cluster when it comes to ensuring your applications are reliable, available, and tolerant to failures.
 
 ## Contributing
 
