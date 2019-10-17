@@ -1,70 +1,66 @@
-# NWA Tech Hackfest
-
 # Agenda
 
-## Presentation: Azure overview 
+## Presentation: Azure Overview
 
-## Pre-Challenge: build server / working environment 
+## Challenge: build server / working environment
 
-- Create Azure AD accounts for team members 
-- Assign build master 
-- Create Ubuntu build server VM from the Portal 
-- SSH into server and run setup.sh gist 
-- az login 
+- Create Azure AD accounts for team members
+- Assign build master
+- Create Ubuntu build server
+- SSH into server and run setup.sh gist
+- az login
+- Fork this repo to the build server
 
-## Presentation: Intro to CosmosDB 
+## Presentation: Intro to CosmosDB
 
-## Challenge: Load IMDB Data 
+## Challenge: Load IMDB Data
 
-- Clone IMDB repo onto build server 
-- Create CosmosDB server 
-- Create collection 
-- Run import script 
-  - Take a look at import-imdb import code; Do you understand it? 
-- Query the database 
-  - Check out CosmosDB notebooks 
+- Create CosmosDB server
+- Create collection
+- Run import script
+  - Take a look at [import-imdb](imdb) import code; Do you understand it?
+- Query the database
+  - Check out CosmosDB notebooks
 
-## Challenge: Security Is Key 
+## Challenge: Security Is Key
 
-- Manage secrets and certs with Azure Key Vault 
-- Create KV 
-- Add CosmosDB keys / secret to KV 
+- Manage secrets with Azure Key Vault
+- Create Key Vault
+- Add secrets to Key Vault
 
-## Presentation: Intro to containers & AKS 
+## Presentation: Intro to Containers and AKS
 
-## Challenge: But First, Containers 
+## Challenge: But First, Containers
 
-- Pull bluebell-nwa 
-- Build, run bluebell and test 
-  - Curl /healthz 
-  - Optional: run integration test 
+- Build, run and test [bluebell](bluebell)
+  - Run unit tests
+  - Curl /healthz
+  - Run integration test
 
-## Challenge: Setup ACR 
+## Challenge: Setup ACR
 
-- Push images to registry 
+- Push bluebell image to registry
 
-## Challenge: Ready For Orchestration 
+## Challenge: Ready For Orchestration
 
-- Use Azure Kubernetes Service to configure and create a Kubernetes cluster 
-  - Confirm Kubectl get nodes 
-- Integrate identity with AKS (AAD-pod-identity) 
-- Deploy bluebell-nwa container from Challenge 1 to the Kubernetes cluster using appropriate namespaces 
-  - Configure yaml w/ env vars 
-  - Open aks URL from browser 
+- Use Azure Kubernetes Service to configure and create a Kubernetes cluster
+  - Confirm Kubectl get nodes
+- Integrate identity with AKS (AAD-pod-identity)
+- Deploy bluebell container to the Kubernetes cluster using appropriate namespaces
+  - Configure yaml w/ env vars
+  - Open bluebell URL from browser
 
-## Challenge: Deploy highly available 
+## Challenge: Deploy highly available
 
-- Deploy multi-replica instance of the app 
-- Commit rolling update to version 2 of the app 
-- Verify that all pods are now running v2 
-- Rollback 
+- Deploy multi-replica instance of the app
+- Commit rolling update to version 2 of the app
+- Verify that all pods are now running v2
+- Rollback
 
-## Challenge: Wait, What's Happening? 
+## Challenge: Wait, What's Happening
 
-- Use Azure Monitor to monitor the health of the AKS cluster 
-- Create alerts to detect issues 
-
-
+- Use Azure Monitor to monitor the health of the AKS cluster
+- Create alerts to detect issues
 
 ## Contributing
 
