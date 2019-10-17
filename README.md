@@ -2,7 +2,7 @@
 
 ## Presentation: Azure Overview
 
-## Challenge: build server / working environment
+## Challenge: Build server / working environment
 
 - Create Azure AD accounts for team members
 - Assign build master
