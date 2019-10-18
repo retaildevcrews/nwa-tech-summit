@@ -140,7 +140,6 @@ namespace UnitTests
             d.Actors = 531;
             d.Movies = 100;
             d.Genres = 19;
-            d.Instance = 0;
 
             return d;
         }

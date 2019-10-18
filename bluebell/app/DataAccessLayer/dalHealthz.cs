@@ -15,7 +15,6 @@ namespace Helium.DataAccessLayer
             d.Actors = GetCount("Actor");
             d.Movies = GetCount("Movie");
             d.Genres = GetCount("Genre");
-            int.TryParse(System.Environment.GetEnvironmentVariable("WEBSITE_ROLE_INSTANCE_ID"), out d.Instance);
 
             // build the payload
             return d;
