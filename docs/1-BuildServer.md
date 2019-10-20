@@ -5,37 +5,56 @@ There are many ways to run Azure, Docker and Kubernetes CLIs.  For this challeng
 ## Challenge
 
 ### Redeem your Azure Pass Promo Code and activate your subscription
-  - https://www.microsoftazurepass.com/Home/HowTo
-  - Ensure everyone on your team has access to your Azure subscription
+
+- https://www.microsoftazurepass.com/Home/HowTo
+- Ensure everyone on your team has access to your Azure subscription
+
 ### Setup one build server in your subscription
 
 Setup and use Cloud Shell to run the following commands.
-```
+
+```bash
+
+# clone this repo
+git clone https://github.com/4-co/nwa-tech-summit
+cd nwa-tech-summit
+
+# create a new resource group
 export ACRRG=acr
 export AKSLOC=centralus
-```
-```
+
 az group create -n $ACRRG --location $AKSLOC
+
 ```
 
 On your local development machine, find or generate your SSH keys.
-```
+
+```bash
+
+# Make sure you're in your home directory
 cd ~
 
-# Create a .ssh folder (if it doesnt already exist)
+# Create an .ssh folder (if it doesnt already exist)
 mkdir .ssh
 cd .ssh
+ll
+
+###### If id_rsa already exists, do NOT run this command!
 
 # Generate the keys
 # Hit enter twice to set an empty passphrase
 ssh-keygen -t rsa -f ./id_rsa
 
+######
+
 ```
+
 Go back to your browser with Azure Cloud Shell.
 
 Click on the "Upload/Download files" button and select the newly generated id_rsa and id_rsa.pub. (You will have to do this once per file)
 
-```
+```bash
+
 # In Azure Cloud Shell, you should see your uploaded keys in the home dir.
 cd ~
 ll
@@ -46,10 +65,13 @@ mv id_rsa id_rsa.pub .ssh/
 # Set the right (owner read+write) permissions for the keys
 chmod 600 ~/.ssh/id_rsa.pub
 chmod 600 ~/.ssh/id_rsa
-```
-Now we'll use the Azure CLI in Cloud Shell to create a VM accessible via this SSH key.
 
 ```
+
+Now we'll use the Azure CLI in Cloud Shell to create a VM accessible via this SSH key.
+
+```bash
+
 # create Docker build VM
 az vm create -g $ACRRG \
 -n docker \
@@ -58,35 +80,47 @@ az vm create -g $ACRRG \
 --image UbuntuLTS \
 --os-disk-size-gb 128 \
 --admin-username aks \
+--custom-data setup/docker_install
 
 export DHOST=aks@`az network public-ip show -g $ACRRG -n dockerPublicIP --query [ipAddress] -o tsv`
 echo " "
 echo $DHOST
+
 ```
 
-SSH into the build server and run the following installation script. 
+SSH into the build server
 
-```    
-curl https://gist.githubusercontent.com/atxryan/5c09e06ee7b32d28e4731f1d1eff6ebf/raw/d2748ed6ae39b6110e77baa6324cc5401cdb1b8e/docker_install.sh > docker_install.sh
+- You can also SSH into the build server from your laptop by using the IP address
+- If anyone else on your team wants to SSH into the server, they will need the SSH keys in their .SSH folder
 
-chmod +x docker_install.sh
+```bash
 
-sudo ./docker_install.sh
+ssh $DHOST
+
 ```
-Note: This can be automated further passing in the startup script using `--custom-data docker_install.sh`
 
 You should now have all of the tools needed for your build server.
 
+## Install VS Code preview with Remote Development support
+
+Optional (but super cool :)
+
+- [VS Code Preview](https://code.visualstudio.com/insiders/)
+- [VS Code Remote Development](https://code.visualstudio.com/blogs/2019/05/02/remote-development)
+
 ## Success Criteria
-  - Your team must be able to SSH into the Ubuntu build server
-  - `az account list -o table | grep True` should list subscription  
-  - `docker -v` should show version greater than 19
+
+- Your team must be able to SSH into the Ubuntu build server
+- `az account list -o table | grep True` should list subscription  
+- `docker -v` should show version greater than 19
 
 ## Resources
-  - Documentation: [Manage access to Azure resources using RBAC and the Azure Portal](https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal)
-  - Documentation: [Create VM with the Azure CLI](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-cli)
-  - Docker [walkthrough](https://github.com/4-co/aks-quickstart/blob/master/docker.md)
-  - Github: [aks-quickstart](https://github.com/4-co/aks-quickstart)
-  - Documentation: [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart)
-  - Azure Marketplace: [Ubuntu 18.04 LTS](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/Canonical.UbuntuServer1804LTS?tab=Overview)
-  - Documentation: [Linux VMs in Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/)
+
+- Documentation: [Setup Azure Cloud Shell](https://github.com/4-co/aks-quickstart/blob/master/cloudshell.md)
+- Documentation: [Manage access to Azure resources using RBAC and the Azure Portal](https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal)
+- Documentation: [Create VM with the Azure CLI](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-cli)
+- Docker [walkthrough](https://github.com/4-co/aks-quickstart/blob/master/docker.md)
+- Github: [aks-quickstart](https://github.com/4-co/aks-quickstart)
+- Documentation: [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart)
+- Azure Marketplace: [Ubuntu 18.04 LTS](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/Canonical.UbuntuServer1804LTS?tab=Overview)
+- Documentation: [Linux VMs in Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/)
