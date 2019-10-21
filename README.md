@@ -1,12 +1,12 @@
 # Agenda
 
-## Presentation: Azure Overview [TODO: Add link to slides?]
+## Presentation: [Azure Overview](./docs/slides/intro_to_azure.pptx)
 
 ## Challenge 1: [Build server / working environment](./docs/1-BuildServer.md)
 
 There are many ways to run Azure, Docker and Kubernetes CLIs.  For this challenge, we are going to use Azure Shell to create an Ubuntu "build server".  We will then SSH into the build server and run the remaining challenges from the build server.  This avoids the issues you run into when trying install everything locally and ensures that everyone is starting from a known status (DevOps).
 
-## Presentation: Intro to CosmosDB [TODO: Add link to slides?]
+## Presentation: [Intro to CosmosDB](./docs/slides/intro_to_cosmosdb.pptx)
 
 ## Challenge 2: [Load IMDB Data](./docs/2-IMDb.md)
 
@@ -18,7 +18,7 @@ The objective of this challenge is to get you started with your own instance of 
 
 When working with applications in the cloud, you need to securely store and access keys, passwords, certificates, and other app secrets.  In this challenge, we will be setting up Azure Key Vault to store secrets about the Cosmos DB server created in the previous challenge.
 
-## Presentation: Intro to Containers and AKS [TODO: Add link to slides?]
+## Presentation: [Intro to Containers and AKS](./docs/slides/intro_to_containers_kubernetes.pptx)
 
 ## Challenge 4: [But First, Containers](./docs/4-ButFirstContainers.md)
 
@@ -40,10 +40,7 @@ The objective of this challenge is to deploy your application to a Azure Kuberne
 
 ## Challenge 7: [Deploy Highly Available](./docs/7-DeployHighlyAvailable.md)
 
-- Deploy multi-replica instance of the app
-- Commit rolling update to version 2 of the app
-- Verify that all pods are now running v2
-- Rollback
+The objective of this challenge is to deploy your application in a highly available manner, commit a rolling update to a new version, and rollback the deployment.
 
 ## Challenge 8: [Wait, What's Happening](./docs/8-WaitWhatsHappening.md)
 

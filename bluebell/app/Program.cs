@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.IO;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace Helium
 {
@@ -36,7 +37,7 @@ namespace Helium
         /// Configure and run the web server
         /// </summary>
         /// <param name="args">command line args</param>
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             try
             {
@@ -52,7 +53,7 @@ namespace Helium
                 }
 
                 // build the config first so Key Vault secrets are available to dependent services
-                config = BuildConfig(kvUrl);
+                config = await BuildConfig(kvUrl);
 
                 // Create data access layer
                 dal = CreateDal();
@@ -196,7 +197,7 @@ namespace Helium
         /// </summary>
         /// <param name="kvUrl">URL of the Key Vault to use</param>
         /// <returns>Root Configuration</returns>
-        static IConfigurationRoot BuildConfig(string kvUrl)
+        static async Task<IConfigurationRoot> BuildConfig(string kvUrl)
         {
             // standard config builder
             var cfgBuilder = new ConfigurationBuilder()
@@ -213,12 +214,13 @@ namespace Helium
                     var keyVaultClient = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(new AzureServiceTokenProvider().KeyVaultTokenCallback));
 
                     // read a key to make sure the connection is valid 
-                    keyVaultClient.GetSecretAsync(kvUrl, Constants.CosmosUrl).Wait(500);
+                    await keyVaultClient.GetSecretAsync(kvUrl, Constants.CosmosUrl);
 
                     // use Azure Key Vault
                     cfgBuilder.AddAzureKeyVault(kvUrl, keyVaultClient, new DefaultKeyVaultSecretManager());
 
-                    break;
+                    // build the config
+                    return cfgBuilder.Build();
                 }
                 catch (Exception ex)
                 {
@@ -234,9 +236,6 @@ namespace Helium
                     }
                 }
             }
-
-            // build the config
-            return cfgBuilder.Build();
         }
 
         /// <summary>

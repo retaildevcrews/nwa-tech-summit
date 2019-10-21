@@ -8,14 +8,14 @@ As mentioned in Challenge #6 some of the advantages of deploying your containers
 
 ## Challenge
 
-- At this point, you've built the images for the components of your application and made those images available in your private ACR. The team has deployed a single pod running the application and the site is up and available. Your team's goal in this challenge is to deploy your application in a highly availbale manner in cluster using replicasets. Maintain 3 replicas of the same deployment.
+- At this point, you've built the images for the components of your application and made those images available in your private ACR. The team has deployed a single pod running the application and the site is up and available. Your team's goal in this challenge is to deploy your application in a highly available manner in cluster using replicasets. Maintain 3 replicas of the same deployment.
 - Rebuild the container with a tag of v2 and push to the container registery. update your kubernetes deployment to create a rolling upgrade of the application to the new version.
 - Institute a rollback of your deployment and verify that the application is back to the proper version.
 
 ## Success Criteria
 
-- Your team  successfully created a multi-replica deployment of the application
-- Your team  must demonstrate that all of the replicas are receiving traffic (Hint you may have to use different clients to test)
+- Your team successfully created a multi-replica deployment of the application
+- Your team must demonstrate that all of the replicas are receiving traffic (Hint you may have to use different clients to test)
 - Your team must demonstrate that the application was updated to a new version and can be rolled-back.
 - The bluebell UI is reachable.
 
