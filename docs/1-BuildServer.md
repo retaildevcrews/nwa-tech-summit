@@ -80,7 +80,7 @@ az vm create -g $ACRRG \
 --image UbuntuLTS \
 --os-disk-size-gb 128 \
 --admin-username aks \
---custom-data setup/docker_install
+--custom-data ~/nwa-tech-summit/setup/docker_install
 
 export DHOST=aks@`az network public-ip show -g $ACRRG -n dockerPublicIP --query [ipAddress] -o tsv`
 echo " "
