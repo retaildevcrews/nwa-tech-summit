@@ -16,7 +16,7 @@ Setup and use Cloud Shell to run the following commands.
 ```bash
 
 # clone this repo
-git clone https://github.com/4-co/nwa-tech-summit
+git clone https://github.com/retaildevcrews/nwa-tech-summit
 cd nwa-tech-summit
 
 # create a new resource group
@@ -116,11 +116,11 @@ Optional (but super cool :)
 
 ## Resources
 
-- Documentation: [Setup Azure Cloud Shell](https://github.com/4-co/aks-quickstart/blob/master/cloudshell.md)
+- Documentation: [Setup Azure Cloud Shell](https://github.com/retaildevcrews/aks-quickstart/blob/master/cloudshell.md)
 - Documentation: [Manage access to Azure resources using RBAC and the Azure Portal](https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal)
 - Documentation: [Create VM with the Azure CLI](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-cli)
-- Docker [walkthrough](https://github.com/4-co/aks-quickstart/blob/master/docker.md)
-- Github: [aks-quickstart](https://github.com/4-co/aks-quickstart)
+- Docker [walkthrough](https://github.com/retaildevcrews/aks-quickstart/blob/master/docker.md)
+- Github: [aks-quickstart](https://github.com/retaildevcrews/aks-quickstart)
 - Documentation: [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart)
 - Azure Marketplace: [Ubuntu 18.04 LTS](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/Canonical.UbuntuServer1804LTS?tab=Overview)
 - Documentation: [Linux VMs in Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/)

@@ -6,7 +6,7 @@ The objective of this challenge is to get you started with your own instance of 
 
 ## Challenge
 
-- Follow the guidance in the readme file in the [imdb folder](../imdb) of this repo to create a Cosmos DB server (SQL API), a database, and a collection and then load the IMDb data.
+- Follow the guidance in the [IMDb Repo](https://github.com/retaildevcrews/imdb) to create a Cosmos DB server (SQL API), a database, and a collection and then load the IMDb data.
 - We have provided the code to import the data to Cosmos DB in interest of time.  However, take some time to look over the imdb-import code in the repo.
   - Do you understand what it is doing?
 - Now your Cosmos DB instance should be up and running.
@@ -20,6 +20,7 @@ The objective of this challenge is to get you started with your own instance of 
 
 ## References
 
+- [IMDb Repository](https://github.com/retaildevcrews/imdb)
 - [Azure Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/introduction)
 - [Cosmos DB Query Cheat Sheet](https://docs.microsoft.com/en-us/azure/cosmos-db/query-cheat-sheet)
 - [Cosmos Notebooks](https://docs.microsoft.com/en-us/azure/cosmos-db/enable-notebooks)

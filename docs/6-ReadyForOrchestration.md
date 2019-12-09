@@ -15,9 +15,9 @@ Containers are extremely useful on their own, but their flexibility and potentia
 ## Success Criteria
 
 - Your team  successfully created an AKS cluster in Azure
-- Your team  must demonstrate that at least one pod for bluebell application is running
+- Your team  must demonstrate that at least one pod for the Helium application is running
 - Your team must demonstrate that the components in your cluster can connect to other components or resources.
-- The bluebell UI is reachable.
+- The Helium UI (swagger) is reachable.
 
 ## References
 
@@ -48,5 +48,5 @@ Containers are extremely useful on their own, but their flexibility and potentia
 
 ### AAD Pod Identity
 
-- [AAD-Pod-Indentity](https://github.com/Azure/aad-pod-identity)
+- [AAD-Pod-Identity](https://github.com/Azure/aad-pod-identity)
 - [AAD-Pod_identity Gist](https://gist.github.com/evillgenius75/d1c5cdcdf602c4ccd57e56ce330f49de)

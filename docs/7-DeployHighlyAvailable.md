@@ -17,7 +17,7 @@ As mentioned in Challenge #6 some of the advantages of deploying your containers
 - Your team successfully created a multi-replica deployment of the application
 - Your team must demonstrate that all of the replicas are receiving traffic (Hint you may have to use different clients to test)
 - Your team must demonstrate that the application was updated to a new version and can be rolled-back.
-- The bluebell UI is reachable.
+- The Helium UI (swagger) is reachable.
 
 ## References
 
